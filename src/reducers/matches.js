@@ -1,3 +1,5 @@
+import {ADD_MATCH} from '../actions';
+
 let defaultState = [
   {
     "mDate" : "2018-05-02",
@@ -16,7 +18,15 @@ let defaultState = [
 ];
 
 const matches = (state=defaultState, action) => {
-  return state;
+  switch (action.type) {
+    case ADD_MATCH:
+      return [
+        ...state,
+        action.payload
+      ]
+    default:
+      return state;
+  }
 }
 
 export default matches;
