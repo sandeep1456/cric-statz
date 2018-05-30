@@ -7,12 +7,15 @@ class Match extends Component {
     return(
       <Row className='match'>
         <Col md={1}>Match {this.props.index}</Col>
+        <Col md={2}>{this.props.t1Name} Vs {this.props.t2Name}</Col>
         <Col md={2}>{this.props.tournament} <br/> {this.props.ground}</Col>
-        <Col md={2}>{this.props.mDate} <br/> {this.props.mTime}</Col>
-        <Col md={3}>{this.props.t1Name} Vs {this.props.t2Name}</Col>
-        <Col md={1}>{this.props.t1Name} <br/> {this.props.t1Score}/{this.props.t1wickets}</Col>
-        <Col md={1}>{this.props.t2Name} <br/> {this.props.t2Score}/{this.props.t2wickets}</Col>
-        <Col md={2}>MoM <br/> {this.props.mom}</Col>
+        <Col md={1}>{this.props.mDate} <br/> {this.props.mTime}</Col>
+        <Col md={1}>{this.props.t1Name} <br/> {this.props.t1Overs}</Col>
+        <Col md={1}>{this.props.t1Score}/{this.props.t1wickets}</Col>
+        <Col md={1}>{this.props.t2Name} <br/> {this.props.t2Overs}</Col>
+        <Col md={1}>{this.props.t2Score}/{this.props.t2wickets}</Col>
+        <Col md={1}>{this.props.t2Name === 'Synerzip' ? 'Won' : 'Lost'}</Col>
+        <Col md={1}>MoM <br/> {this.props.mom}</Col>
       </Row>
     );
   }
@@ -29,6 +32,8 @@ Match.propTypes = {
   "t2Score" : propTypes.numeric,
   "t1wickets" : propTypes.numeric,
   "t2wickets" : propTypes.numeric,
+  "t1Overs" : propTypes.numeric,
+  "t2Overs" : propTypes.numeric,
   "winner" : propTypes.string,
   "mom" : propTypes.string
 }

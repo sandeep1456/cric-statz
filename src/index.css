@@ -3,3 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.match { margin: 0 0 10px 0; background-color: #EFEFFF; border-bottom: 2px solid #EEE; padding: 0px; height: 55px;}
+.match [class^="col-"] {padding: 5px; height: 100%;}

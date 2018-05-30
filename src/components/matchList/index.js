@@ -21,6 +21,8 @@ class MatchList extends Component {
       "t2Score" : 156,
       "t1wickets" : 4,
       "t2wickets" : 10,
+      "t1Overs" : 20,
+      "t2Overs" : 20,
       "winner" : "Synerzip",
       "mom" : ""
     })
