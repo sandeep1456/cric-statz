@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Match from '../match';
+import {Grid, PageHeader, Button } from 'react-bootstrap';
 
 
 class MatchList extends Component {
@@ -13,10 +15,10 @@ class MatchList extends Component {
       "mTime" : "9:00 AM",
       "tournament" : "Vintage Cup",
       "ground" : "Poona Club",
-      "team1" : "Synerzip",
-      "team2" : "Infosys",
+      "t1Name" : "Synerzip",
+      "t2Name" : "Infosys",
       "t1Score" : 180,
-      "t2score" : 156,
+      "t2Score" : 156,
       "t1wickets" : 4,
       "t2wickets" : 10,
       "winner" : "Synerzip",
@@ -26,14 +28,17 @@ class MatchList extends Component {
 
   render(){
     return(
-      <div>
-        <button onClick={this.saveMatch}> Add Match </button>
+      <Grid className='matches-tab'>
+        <PageHeader>
+          Matches <Button className='pull-right' bsStyle='primary' onClick={this.saveMatch}> Add Match </Button>
+        </PageHeader>
+
         <div>
           { this.props.matches.map((match, index) =>
-            <div> Match {index+1} </div>
+            <Match {...match} index = {index+1} />
           )}
         </div>
-      </div>
+      </Grid>
     );
   }
 }
