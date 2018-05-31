@@ -15,7 +15,7 @@ let defaultState = [
     "t1Overs" : 20,
     "t2Overs" : 20,
     "winner" : "Synerzip",
-    "mom" : "Amey"
+    "mom" : "Amey Kale"
   }
 ];
 

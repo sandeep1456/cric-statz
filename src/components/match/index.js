@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { Row, Col } from 'react-bootstrap';
+import { Label } from 'react-bootstrap';
+
 
 class Match extends Component {
   render(){
+    let rowClass = 'match ' + (this.props.winner !== 'Synerzip' ? 'lost' : '');
     return(
-      <Row className='match'>
-        <Col md={1}>Match {this.props.index}</Col>
-        <Col md={2}>{this.props.t1Name} Vs {this.props.t2Name}</Col>
-        <Col md={2}>{this.props.tournament} <br/> {this.props.ground}</Col>
-        <Col md={1}>{this.props.mDate} <br/> {this.props.mTime}</Col>
-        <Col md={1}>{this.props.t1Name} <br/> {this.props.t1Overs}</Col>
-        <Col md={1}>{this.props.t1Score}/{this.props.t1wickets}</Col>
-        <Col md={1}>{this.props.t2Name} <br/> {this.props.t2Overs}</Col>
-        <Col md={1}>{this.props.t2Score}/{this.props.t2wickets}</Col>
-        <Col md={1}>{this.props.t2Name === 'Synerzip' ? 'Won' : 'Lost'}</Col>
-        <Col md={1}>MoM <br/> {this.props.mom}</Col>
-      </Row>
+      <tr className={rowClass}>
+        <td>
+          Match {this.props.index} <br/>
+          {this.props.winner === 'Synerzip' ? <Label bsStyle="success">Won</Label>: <Label bsStyle="warning">Lost</Label>}
+          {' '} <a>Details</a>
+        </td>
+        <td className='h3'>{this.props.t1Name === 'Synerzip' ? this.props.t2Name : this.props.t1Name }</td>
+        <td><b>{this.props.tournament}</b> <br/> {this.props.ground}</td>
+        <td>{this.props.mDate} <br/> {this.props.mTime}</td>
+        <td className='score'>
+          <div className='score-left'><strong>{this.props.t1Name}</strong> <br/> {this.props.t1Overs} Overs</div>
+          <div className='score-right'>{this.props.t1Score}/{this.props.t1wickets}</div>
+        </td>
+        <td className='score'>
+          <div className='score-left'><strong>{this.props.t2Name}</strong> <br/> {this.props.t2Overs} Overs</div>
+          <div className='score-right'>{this.props.t2Score}/{this.props.t2wickets}</div>
+        </td>
+        <td> {this.props.mom ? <strong>{this.props.mom}</strong> : ''}</td>
+      </tr>
     );
   }
 }
@@ -28,12 +37,12 @@ Match.propTypes = {
   "ground" : propTypes.string,
   "t1Name" : propTypes.string,
   "t2Name" : propTypes.string,
-  "t1Score" : propTypes.numeric,
-  "t2Score" : propTypes.numeric,
-  "t1wickets" : propTypes.numeric,
-  "t2wickets" : propTypes.numeric,
-  "t1Overs" : propTypes.numeric,
-  "t2Overs" : propTypes.numeric,
+  "t1Score" : propTypes.number,
+  "t2Score" : propTypes.number,
+  "t1wickets" : propTypes.number,
+  "t2wickets" : propTypes.number,
+  "t1Overs" : propTypes.number,
+  "t2Overs" : propTypes.number,
   "winner" : propTypes.string,
   "mom" : propTypes.string
 }

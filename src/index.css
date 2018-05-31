@@ -3,6 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+/*Bootstrap override*/
+.page-header { margin: 0; }
 
-.match { margin: 0 0 10px 0; background-color: #EFEFFF; border-bottom: 2px solid #EEE; padding: 0px; height: 55px;}
-.match [class^="col-"] {padding: 5px; height: 100%;}
+/* App CSS */
+.match {background-color: #EAFFEE; height: 50px;}
+.match td {padding:5px !important; border-bottom: 1px solid green;}
+.match.lost td {background-color: #FFF2F2; border-bottom: 1px solid red;}
+.match .h3 {font-size: 30px;}
+.match .score-left, .match .score-right {height: 40px; text-align: center;}
+.match .score-left {float: left; width: 40%; background-color: #B6D7A8;}
+.match .score-right {float: right; width: 60%; background-color: #38761D; font-size: 30px; color:white;}
+.match .result .h3 {font-size: 18px; border-radius: 0; font-weight: normal; padding: 5px; display: inline-block; margin: 0; text-transform: uppercase; line-height: 1.6;}
