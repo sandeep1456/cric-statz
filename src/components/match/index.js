@@ -4,27 +4,32 @@ import { Label } from 'react-bootstrap';
 
 
 class Match extends Component {
+
+  selectMatch(matchData){
+    this.props.selectMatch(matchData);
+  }
+
   render(){
-    let rowClass = 'match ' + (this.props.winner !== 'Synerzip' ? 'lost' : '');
+    let rowClass = 'match ' + (this.props.match.winner !== 'Synerzip' ? 'lost' : '');
     return(
       <tr className={rowClass}>
         <td>
           Match {this.props.index} <br/>
-          {this.props.winner === 'Synerzip' ? <Label bsStyle="success">Won</Label>: <Label bsStyle="warning">Lost</Label>}
-          {' '} <a>Details</a>
+          {this.props.match.winner === 'Synerzip' ? <Label bsStyle="success">Won</Label>: <Label bsStyle="warning">Lost</Label>}
+          {' '} <a onClick={(e)=>this.selectMatch(this.props.match)}>Details</a>
         </td>
-        <td className='h3'>{this.props.t1Name === 'Synerzip' ? this.props.t2Name : this.props.t1Name }</td>
-        <td><b>{this.props.tournament}</b> <br/> {this.props.ground}</td>
-        <td>{this.props.mDate} <br/> {this.props.mTime}</td>
+        <td className='h3'>{this.props.match.t1Name === 'Synerzip' ? this.props.match.t2Name : this.props.match.t1Name }</td>
+        <td><b>{this.props.match.tournament}</b> <br/> {this.props.match.ground}</td>
+        <td>{this.props.match.mDate} <br/> {this.props.match.mTime}</td>
         <td className='score'>
-          <div className='score-left'><strong>{this.props.t1Name}</strong> <br/> {this.props.t1Overs} Overs</div>
-          <div className='score-right'>{this.props.t1Score}/{this.props.t1wickets}</div>
+          <div className='score-left'><strong>{this.props.match.t1Name}</strong> <br/> {this.props.match.t1Overs} Overs</div>
+          <div className='score-right'>{this.props.match.t1Score}/{this.props.match.t1wickets}</div>
         </td>
         <td className='score'>
-          <div className='score-left'><strong>{this.props.t2Name}</strong> <br/> {this.props.t2Overs} Overs</div>
-          <div className='score-right'>{this.props.t2Score}/{this.props.t2wickets}</div>
+          <div className='score-left'><strong>{this.props.match.t2Name}</strong> <br/> {this.props.match.t2Overs} Overs</div>
+          <div className='score-right'>{this.props.match.t2Score}/{this.props.match.t2wickets}</div>
         </td>
-        <td> {this.props.mom ? <strong>{this.props.mom}</strong> : ''}</td>
+        <td> {this.props.match.mom ? <strong>{this.props.match.mom}</strong> : ''}</td>
       </tr>
     );
   }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Match from '../match';
+import Match from '../../containers/match';
+import MatchDetails from '../../containers/matchDetails';
 import {Grid, PageHeader, Button, Table } from 'react-bootstrap';
 
 
@@ -49,10 +50,11 @@ class MatchList extends Component {
           </thead>
           <tbody>
             { this.props.matches.map((match, index) =>
-              <Match key={index} {...match} index = {index+1} />
+              <Match key={index} match={match} index = {index+1} />
             )}
           </tbody>
         </Table>
+        <MatchDetails />
       </Grid>
     );
   }
