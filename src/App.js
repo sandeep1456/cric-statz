@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Route } from 'react-router-dom';
 import MatchList from './containers/matchList';
+import MatchDetails from './containers/matchDetails';
 
 class App extends Component {
   render() {
@@ -16,14 +18,16 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem active href="/">
+              <NavItem active href="/matches">
                 Matches
               </NavItem>
             </Nav>
           </Navbar.Collapse>
 
         </Navbar>
-        <MatchList />
+        <Route path='/matches/:matchId' component={MatchDetails} />
+        <Route exact path='/matches' component={MatchList} />
+        <Route exact path='/' component={MatchList} />
       </div>
     );
   }

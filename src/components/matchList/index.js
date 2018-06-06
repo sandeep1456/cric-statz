@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Match from '../../containers/match';
-import MatchDetails from '../../containers/matchDetails';
+import Match from '../match';
 import {Grid, PageHeader, Button, Table } from 'react-bootstrap';
 
 
@@ -12,6 +11,7 @@ class MatchList extends Component {
 
   saveMatch(e){
     this.props.addMatch({
+      "id": 2,
       "mDate" : "2017-09-04",
       "mTime" : "9:00 AM",
       "tournament" : "Vintage Cup",
@@ -54,7 +54,6 @@ class MatchList extends Component {
             )}
           </tbody>
         </Table>
-        <MatchDetails />
       </Grid>
     );
   }

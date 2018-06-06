@@ -2,6 +2,7 @@ import {ADD_MATCH} from '../actions';
 
 let defaultState = [
   {
+    "id": 1,
     "mDate" : "2018-05-02",
     "mTime" : "9:00 AM",
     "tournament" : "Pune IT Cup",

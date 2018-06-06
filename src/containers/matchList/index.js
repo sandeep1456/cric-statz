@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
   matches : state.matches
 });
 
+
 const mapDispatchToProps = dispatch => ({
   addMatch : data => dispatch(addMatch(data))
 });

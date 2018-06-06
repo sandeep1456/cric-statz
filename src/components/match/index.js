@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { Label } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 class Match extends Component {
@@ -16,7 +17,7 @@ class Match extends Component {
         <td>
           Match {this.props.index} <br/>
           {this.props.match.winner === 'Synerzip' ? <Label bsStyle="success">Won</Label>: <Label bsStyle="warning">Lost</Label>}
-          {' '} <a onClick={(e)=>this.selectMatch(this.props.match)}>Details</a>
+          {' '} <Link to={`matches/${this.props.match.id}`}>Details</Link>
         </td>
         <td className='h3'>{this.props.match.t1Name === 'Synerzip' ? this.props.match.t2Name : this.props.match.t1Name }</td>
         <td><b>{this.props.match.tournament}</b> <br/> {this.props.match.ground}</td>
