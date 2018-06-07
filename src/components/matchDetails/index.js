@@ -22,38 +22,34 @@ class MatchDetails extends Component {
           </PageHeader>
         </Row>
         <br/>
-        <Row className="no-gutters">
-          <Col md={2} className='inning-box list-group text-center'>
-            <Row className='list-group-item active no-gutters'>
-              <Col md={12}> First Inning </Col>
-            </Row>
-            <Row className='list-group-item  no-gutters'>
-              <Col md={12}>
-                <Row>
-                  <Col md={12}><h4>{this.props.matchData.t1Name}</h4></Col>
-                  <Col md={12}><h1>{this.props.matchData.t1Score}/{this.props.matchData.t1wickets}</h1></Col>
-                  <Col md={12}>{this.props.matchData.t1Overs} overs</Col>
-                </Row>
-              </Col>
-            </Row>
+        <Row className='no-gutters'>
+          <Col md={3} className='inning-box text-center'>
+            <Panel bsStyle="primary">
+              <Panel.Heading>
+                <Panel.Title componentClass="h3">First Inning</Panel.Title>
+              </Panel.Heading>
+              <Panel.Body>
+                <h4>{this.props.matchData.t1Name}</h4>
+                <h1>{this.props.matchData.t1Score}/{this.props.matchData.t1wickets}</h1>
+                {this.props.matchData.t1Overs} overs
+              </Panel.Body>
+            </Panel>
           </Col>
 
-          <Col md={2} className='inning-box list-group text-center '>
-            <Row className='list-group-item active no-gutters'>
-              <Col md={12}> Second Inning </Col>
-            </Row>
-            <Row className='list-group-item  no-gutters'>
-              <Col md={12}>
-                <Row>
-                  <Col md={12}><h4>{this.props.matchData.t2Name}</h4></Col>
-                  <Col md={12}><h1>{this.props.matchData.t2Score}/{this.props.matchData.t2wickets}</h1></Col>
-                  <Col md={12}>{this.props.matchData.t2Overs} overs</Col>
-                </Row>
-              </Col>
-            </Row>
+          <Col md={3} className='inning-box text-center'>
+            <Panel bsStyle="primary">
+              <Panel.Heading>
+                <Panel.Title componentClass="h3">Second Inning</Panel.Title>
+              </Panel.Heading>
+              <Panel.Body>
+                <h4>{this.props.matchData.t2Name}</h4>
+                <h1>{this.props.matchData.t2Score}/{this.props.matchData.t2wickets}</h1>
+                {this.props.matchData.t2Overs} overs
+              </Panel.Body>
+            </Panel>
           </Col>
 
-          <Col md={8} className='list-group'>
+          <Col md={6} className='list-group'>
             <Row className='list-group-item no-gutters'>
               <Col md={6}>
                 <Row>
@@ -120,12 +116,12 @@ class MatchDetails extends Component {
                     <tr>
                       <th>#</th>
                       <th>Name</th>
+                      <th>Dismissal</th>
                       <th>Runs</th>
                       <th>Balls</th>
                       <th>4s</th>
                       <th>6s</th>
                       <th>S/R</th>
-                      <th>Dismissal</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -134,7 +130,7 @@ class MatchDetails extends Component {
                       <tr key={index}>
                         <td>{record}</td>
                         <td>Bastman {record}</td>
-                        <td>0</td>
+                        <td> </td>
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
