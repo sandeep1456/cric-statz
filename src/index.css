@@ -5,6 +5,7 @@ body {
 }
 /*Bootstrap override*/
 .page-header { margin: 0; }
+.no-gutters { margin-right: 0; margin-left: 0; }
 
 /* App CSS */
 .match {background-color: #EAFFEE; height: 50px;}
@@ -15,3 +16,4 @@ body {
 .match .score-left {float: left; width: 40%; background-color: #B6D7A8;}
 .match .score-right {float: right; width: 60%; background-color: #38761D; font-size: 30px; color:white;}
 .match .result .h3 {font-size: 18px; border-radius: 0; font-weight: normal; padding: 5px; display: inline-block; margin: 0; text-transform: uppercase; line-height: 1.6;}
+.inning-box h4, .inning-box h1 { margin: 5px 0 7px 0; }
